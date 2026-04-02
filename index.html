@@ -14,7 +14,7 @@
     padding: 12px 18px; border-radius: 8px; border-left: 3px solid #25d366;
     line-height: 1.7; white-space: pre-line;
   }
-  .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px 48px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px 48px; }
   table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 6px rgba(0,0,0,.08); }
   thead tr { background: #25d366; color: #fff; }
   thead th { padding: 13px 16px; text-align: left; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .6px; }
@@ -23,11 +23,9 @@
   tbody tr:hover { background: #f0fdf4; }
   td { padding: 11px 16px; font-size: 13.5px; border-bottom: 1px solid #f0f0f0; vertical-align: middle; }
   td.num { color: #bbb; font-size: 12px; width: 32px; }
-  td.name { font-weight: 500; max-width: 260px; }
-  td.phone { font-variant-numeric: tabular-nums; color: #555; white-space: nowrap; }
-  td.rating { white-space: nowrap; color: #555; }
-
-  /* Wait strip */
+  td.name { font-weight: 500; max-width: 320px; }
+  td.phone, td.rating, td.meta { white-space: nowrap; color: #555; }
+  td.meta { max-width: 200px; overflow: hidden; text-overflow: ellipsis; }
   tr.wait-row td { padding: 0; border: none; background: transparent; }
   .wait-strip {
     background: #111;
@@ -43,8 +41,6 @@
     justify-content: center;
     gap: 10px;
   }
-
-  /* WhatsApp button */
   a.btn {
     display: inline-flex; align-items: center; gap: 6px;
     background: #25d366; color: #fff; text-decoration: none;
@@ -56,15 +52,15 @@
     content: ''; display: inline-block; width: 14px; height: 14px;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/%3E%3C/svg%3E") center/contain no-repeat;
   }
-  @media(max-width:600px) {
-    td.phone, td.rating, thead th:nth-child(3), thead th:nth-child(4) { display: none; }
+  @media(max-width:700px) {
+    td.phone, td.rating, td.meta, thead th:nth-child(3), thead th:nth-child(4), thead th:nth-child(5) { display: none; }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
   <h1>Law Firm WhatsApp Leads</h1>
-  <p class="sub">30 leads · WhatsApp Business · pause every 5 messages</p>
+  <p class="sub">95 leads with phone numbers · WhatsApp Business · pause every 5 messages</p>
   <div class="msg-preview">💬 Hi, is this [Name]?
 
 I came across your firm and noticed you have a [Rating] rating.
@@ -73,249 +69,864 @@ With that kind of reputation, a proper website could bring you even more high-qu
 
 I help law firms increase client inquiries through simple, professional websites.
 
-Here's my portfolio:
+Here&#x27;s my portfolio:
 https://aadityabhatnagar.online/portfolio
 
-If you'd like, I can create a quick demo for your firm (free), and you can decide after seeing it.</div>
+If you&#x27;d like, I can create a quick demo for your firm (free), and you can decide after seeing it.</div>
   <table>
     <thead>
-      <tr><th>#</th><th>Name</th><th>Phone</th><th>Rating</th><th>Message</th></tr>
+      <tr><th>#</th><th>Name</th><th>Phone</th><th>Rating</th><th>Keyword</th><th>Message</th></tr>
     </thead>
     <tbody>
 <tr class="even">
   <td class="num">1</td>
-  <td class="name">Gajendra Singh Rajpurohit Advocate</td>
-  <td class="phone">094141 21394</td>
-  <td class="rating">⭐ 4.9</td>
-  <td><a href="https://wa.me/919414121394?text=Hi%2C%20is%20this%20Gajendra%20Singh%20Rajpurohit%20Advocate%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">ANURUDH SINGH KAURAV |Advocate/Lawyer in Gwalior (criminal family revenue etc. )</td>
+  <td class="phone">097131 91271</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/919713191271?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20ANURUDH%20SINGH%20KAURAV%20%7CAdvocate%2FLawyer%20in%20Gwalior%20%28criminal%20family%20revenue%20etc.%20%29%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="odd">
   <td class="num">2</td>
-  <td class="name">Satguru Crane Service In Sikar</td>
-  <td class="phone">094142 47936</td>
-  <td class="rating">⭐ 4.9</td>
-  <td><a href="https://wa.me/919414247936?text=Hi%2C%20is%20this%20Satguru%20Crane%20Service%20In%20Sikar%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">Advocate MP High Court Amardeep Jaiswal - LEGAL SERVICE / Work</td>
+  <td class="phone">070005 63865</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/917000563865?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20MP%20High%20Court%20Amardeep%20Jaiswal%20-%20LEGAL%20SERVICE%20%2F%20Work%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="even">
   <td class="num">3</td>
-  <td class="name">Advocate Manoj Dhaka</td>
-  <td class="phone">094130 00824</td>
-  <td class="rating">⭐ 5.0</td>
-  <td><a href="https://wa.me/919413000824?text=Hi%2C%20is%20this%20Advocate%20Manoj%20Dhaka%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205.0%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">Vishal Sharma Advocate - High court Criminal case, Divorce Case,138 chqe case And Family Case Lawyer in Gwalior</td>
+  <td class="phone">087704 07066</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/918770407066?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Vishal%20Sharma%20Advocate%20-%20High%20court%20Criminal%20case%2C%20Divorce%20Case%2C138%20chqe%20case%20And%20Family%20Case%20Lawyer%20in%20Gwalior%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="odd">
   <td class="num">4</td>
-  <td class="name">Dr. Abhijeet Pareek: BDS, Membership of Indian dental association certified dental hospital City Dental Hospital</td>
-  <td class="phone">094611 85192</td>
+  <td class="name">𝗔𝗱𝘃𝗼𝗰𝗮𝘁𝗲 𝗥𝗼𝗺𝗲𝘀𝗵 𝗣𝗿𝗮𝘁𝗮𝗽 𝗦𝗶𝗻𝗴𝗵</td>
+  <td class="phone">074898 24035</td>
   <td class="rating">⭐ 4.9</td>
-  <td><a href="https://wa.me/919461185192?text=Hi%2C%20is%20this%20Dr.%20Abhijeet%20Pareek%3A%20BDS%2C%20Membership%20of%20Indian%20dental%20association%20certified%20dental%20hospital%20City%20Dental%20Hospital%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/917489824035?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20%F0%9D%97%94%F0%9D%97%B1%F0%9D%98%83%F0%9D%97%BC%F0%9D%97%B0%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B2%20%F0%9D%97%A5%F0%9D%97%BC%F0%9D%97%BA%F0%9D%97%B2%F0%9D%98%80%F0%9D%97%B5%20%F0%9D%97%A3%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%AE%F0%9D%97%BD%20%F0%9D%97%A6%F0%9D%97%B6%F0%9D%97%BB%F0%9D%97%B4%F0%9D%97%B5%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="even">
   <td class="num">5</td>
-  <td class="name">ADVOCATE DINESH KUMAR</td>
-  <td class="phone">099500 53347</td>
-  <td class="rating">⭐ 4.9</td>
-  <td><a href="https://wa.me/919950053347?text=Hi%2C%20is%20this%20ADVOCATE%20DINESH%20KUMAR%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">J P Associates</td>
+  <td class="phone">098270 64067</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/919827064067?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20J%20P%20Associates%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="wait-row">
-  <td colspan="4">
+  <td colspan="6">
     <div class="wait-strip">⏱ Wait 10 minutes before continuing</div>
   </td>
 </tr>
 <tr class="odd">
   <td class="num">6</td>
-  <td class="name">CLAT Maxx Tutorials</td>
-  <td class="phone">083859 01220</td>
+  <td class="name">Advocate Prabhat Rajawat</td>
+  <td class="phone">089827 03353</td>
   <td class="rating">⭐ 4.8</td>
-  <td><a href="https://wa.me/918385901220?text=Hi%2C%20is%20this%20CLAT%20Maxx%20Tutorials%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.8%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/918982703353?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Prabhat%20Rajawat%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.8%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="even">
   <td class="num">7</td>
-  <td class="name">Advocate Ravindra Singh Maurya</td>
-  <td class="phone">094131 92008</td>
-  <td class="rating">⭐ 4.8</td>
-  <td><a href="https://wa.me/919413192008?text=Hi%2C%20is%20this%20Advocate%20Ravindra%20Singh%20Maurya%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.8%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">gwalior law firm</td>
+  <td class="phone">094066 09413</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/919406609413?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20gwalior%20law%20firm%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="odd">
   <td class="num">8</td>
-  <td class="name">Adv Narendra Katariya | Legal Consultant | Advocate in Rajasthan, Sikar</td>
-  <td class="phone">099508 18437</td>
-  <td class="rating">⭐ 5.0</td>
-  <td><a href="https://wa.me/919950818437?text=Hi%2C%20is%20this%20Adv%20Narendra%20Katariya%20%7C%20Legal%20Consultant%20%7C%20Advocate%20in%20Rajasthan%2C%20Sikar%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205.0%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">Grover Law House</td>
+  <td class="phone">098933 93605</td>
+  <td class="rating">⭐ 4.1</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/919893393605?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Grover%20Law%20House%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.1%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="even">
   <td class="num">9</td>
-  <td class="name">Shaitan Singh Sisodiya advocate Pali</td>
-  <td class="phone">099501 37657</td>
-  <td class="rating">⭐ 5.0</td>
-  <td><a href="https://wa.me/919950137657?text=Hi%2C%20is%20this%20Shaitan%20Singh%20Sisodiya%20advocate%20Pali%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205.0%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">Advocate Rahul Shri pal crimnal &amp; civil lawyer jabalpur</td>
+  <td class="phone">091794 45558</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/919179445558?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Rahul%20Shri%20pal%20crimnal%20%26%20civil%20lawyer%20jabalpur%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="odd">
   <td class="num">10</td>
-  <td class="name">Shaheed Bhagat Singh Law College</td>
-  <td class="phone">092142 04114</td>
-  <td class="rating">⭐ 4.3</td>
-  <td><a href="https://wa.me/919214204114?text=Hi%2C%20is%20this%20Shaheed%20Bhagat%20Singh%20Law%20College%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.3%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">Modi Law Firm</td>
+  <td class="phone">092035 16838</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/919203516838?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Modi%20Law%20Firm%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="wait-row">
-  <td colspan="4">
+  <td colspan="6">
     <div class="wait-strip">⏱ Wait 10 minutes before continuing</div>
   </td>
 </tr>
 <tr class="even">
   <td class="num">11</td>
-  <td class="name">Adv Rakesh Gehlot</td>
-  <td class="phone">090575 54241</td>
-  <td class="rating">⭐ 4.9</td>
-  <td><a href="https://wa.me/919057554241?text=Hi%2C%20is%20this%20Adv%20Rakesh%20Gehlot%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">Gyanendra Singh Chauhan Advocate</td>
+  <td class="phone">079875 51317</td>
+  <td class="rating">⭐ 4.8</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/917987551317?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Gyanendra%20Singh%20Chauhan%20Advocate%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.8%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="odd">
   <td class="num">12</td>
-  <td class="name">Dalip Krishniya Tax Consultants, GST Solution & Tally Business Accounts</td>
-  <td class="phone">082094 84776</td>
-  <td class="rating">⭐ 5.0</td>
-  <td><a href="https://wa.me/918209484776?text=Hi%2C%20is%20this%20Dalip%20Krishniya%20Tax%20Consultants%2C%20GST%20Solution%20%26%20Tally%20Business%20Accounts%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205.0%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">PNA Intellectual Property, Media &amp; Technology Attorneys</td>
+  <td class="phone">090158 15408</td>
+  <td class="rating">⭐ 4.8</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/919015815408?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20PNA%20Intellectual%20Property%2C%20Media%20%26%20Technology%20Attorneys%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.8%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="even">
   <td class="num">13</td>
-  <td class="name">Advocate Yogesh Baman - Balaji Associate</td>
-  <td class="phone">083023 45523</td>
-  <td class="rating">⭐ 5.0</td>
-  <td><a href="https://wa.me/918302345523?text=Hi%2C%20is%20this%20Advocate%20Yogesh%20Baman%20-%20Balaji%20Associate%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205.0%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">Advocate sandeep jain</td>
+  <td class="phone">098263 19746</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/919826319746?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20sandeep%20jain%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="odd">
   <td class="num">14</td>
-  <td class="name">Sharma Rakesh & Co., Chartered Accountant, CA, Sikar</td>
-  <td class="phone">085620 02332</td>
-  <td class="rating">⭐ 4.8</td>
-  <td><a href="https://wa.me/918562002332?text=Hi%2C%20is%20this%20Sharma%20Rakesh%20%26%20Co.%2C%20Chartered%20Accountant%2C%20CA%2C%20Sikar%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.8%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">Advocate Dinesh Kumar Gupta- Best Matrimonial Lawyer in Jabalpur/Criminal &amp; Cheque Bounce Lawyer| Family Matter lawyer</td>
+  <td class="phone">094251 63048</td>
+  <td class="rating">⭐ 4.9</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/919425163048?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Dinesh%20Kumar%20Gupta-%20Best%20Matrimonial%20Lawyer%20in%20Jabalpur%2FCriminal%20%26%20Cheque%20Bounce%20Lawyer%7C%20Family%20Matter%20lawyer%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="even">
   <td class="num">15</td>
-  <td class="name">ADVOCATE PARMJEET SINGH</td>
-  <td class="phone">085599 83665</td>
-  <td class="rating">⭐ 5.0</td>
-  <td><a href="https://wa.me/918559983665?text=Hi%2C%20is%20this%20ADVOCATE%20PARMJEET%20SINGH%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205.0%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">Mehta Law Associates By Surendra Mehta</td>
+  <td class="phone">093400 33069</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in ujjain</td>
+  <td><a href="https://wa.me/919340033069?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Mehta%20Law%20Associates%20By%20Surendra%20Mehta%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="wait-row">
-  <td colspan="4">
+  <td colspan="6">
     <div class="wait-strip">⏱ Wait 10 minutes before continuing</div>
   </td>
 </tr>
 <tr class="odd">
   <td class="num">16</td>
-  <td class="name">Advocate Bhuvenesh Kabra</td>
-  <td class="phone">098290 28935</td>
-  <td class="rating">⭐ 5.0</td>
-  <td><a href="https://wa.me/919829028935?text=Hi%2C%20is%20this%20Advocate%20Bhuvenesh%20Kabra%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205.0%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">Advocate gaurav mehta</td>
+  <td class="phone">097701 11316</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in ratlam</td>
+  <td><a href="https://wa.me/919770111316?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20gaurav%20mehta%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="even">
   <td class="num">17</td>
-  <td class="name">Advocate Pulkitt Raj Sharmaa Office</td>
-  <td class="phone">096369 74105</td>
-  <td class="rating">⭐ 5.0</td>
-  <td><a href="https://wa.me/919636974105?text=Hi%2C%20is%20this%20Advocate%20Pulkitt%20Raj%20Sharmaa%20Office%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205.0%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">Raj Shrivastava Advocate</td>
+  <td class="phone">094251 22737</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/919425122737?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Raj%20Shrivastava%20Advocate%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="odd">
   <td class="num">18</td>
-  <td class="name">Taparia & Company, Advocates</td>
-  <td class="phone">091668 21000</td>
-  <td class="rating">⭐ 4.9</td>
-  <td><a href="https://wa.me/919166821000?text=Hi%2C%20is%20this%20Taparia%20%26%20Company%2C%20Advocates%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">Advocate Vijay Soni Gwalior</td>
+  <td class="phone">090092 77717</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/919009277717?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Vijay%20Soni%20Gwalior%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="even">
   <td class="num">19</td>
-  <td class="name">Adv. Raju Hariyal & Associates</td>
-  <td class="phone">092691 01215</td>
-  <td class="rating">⭐ 5.0</td>
-  <td><a href="https://wa.me/919269101215?text=Hi%2C%20is%20this%20Adv.%20Raju%20Hariyal%20%26%20Associates%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205.0%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">Advocate Rajat Bohare</td>
+  <td class="phone">097537 16222</td>
+  <td class="rating">⭐ 4.9</td>
+  <td class="meta">law firm in sagar</td>
+  <td><a href="https://wa.me/919753716222?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Rajat%20Bohare%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="odd">
   <td class="num">20</td>
-  <td class="name">Adv. R.S. Kesariya & Associates</td>
-  <td class="phone">077377 06071</td>
-  <td class="rating">⭐ 4.6</td>
-  <td><a href="https://wa.me/917737706071?text=Hi%2C%20is%20this%20Adv.%20R.S.%20Kesariya%20%26%20Associates%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.6%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">Advocate P.K. Singh - Criminal/Cyber Crime/Divorce/Property Advocate/Lawyer - Best Advocate/Lawyer In Gwalior</td>
+  <td class="phone">092014 57532</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/919201457532?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20P.K.%20Singh%20-%20Criminal%2FCyber%20Crime%2FDivorce%2FProperty%20Advocate%2FLawyer%20-%20Best%20Advocate%2FLawyer%20In%20Gwalior%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="wait-row">
-  <td colspan="4">
+  <td colspan="6">
     <div class="wait-strip">⏱ Wait 10 minutes before continuing</div>
   </td>
 </tr>
 <tr class="even">
   <td class="num">21</td>
-  <td class="name">Parihar & Associates</td>
-  <td class="phone">097838 14989</td>
-  <td class="rating">⭐ 5.0</td>
-  <td><a href="https://wa.me/919783814989?text=Hi%2C%20is%20this%20Parihar%20%26%20Associates%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205.0%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">Prakash Pandey Advocate</td>
+  <td class="phone">088718 49683</td>
+  <td class="rating">⭐ 4.8</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/918871849683?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Prakash%20Pandey%20Advocate%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.8%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="odd">
   <td class="num">22</td>
-  <td class="name">Advocate Pawan Kumar Sharma Office</td>
-  <td class="phone">094130 69847</td>
-  <td class="rating">⭐ 5.0</td>
-  <td><a href="https://wa.me/919413069847?text=Hi%2C%20is%20this%20Advocate%20Pawan%20Kumar%20Sharma%20Office%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205.0%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">Advocate Vijay yadav</td>
+  <td class="phone">095844 42433</td>
+  <td class="rating">⭐ 4.8</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/919584442433?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Vijay%20yadav%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.8%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="even">
   <td class="num">23</td>
-  <td class="name">Advocate Rajat Vyas</td>
-  <td class="phone">094142 05226</td>
-  <td class="rating">⭐ 3.0</td>
-  <td><a href="https://wa.me/919414205226?text=Hi%2C%20is%20this%20Advocate%20Rajat%20Vyas%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%203.0%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">Advocate Anuradha Vasisht</td>
+  <td class="phone">070673 10166</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/917067310166?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Anuradha%20Vasisht%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="odd">
   <td class="num">24</td>
-  <td class="name">Advocate Sudhir pratap singh Rathore</td>
-  <td class="phone">077422 97999</td>
-  <td class="rating">⭐ 5.0</td>
-  <td><a href="https://wa.me/917742297999?text=Hi%2C%20is%20this%20Advocate%20Sudhir%20pratap%20singh%20Rathore%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205.0%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">Surange &amp; Company</td>
+  <td class="phone">094072 33744</td>
+  <td class="rating">⭐ 4.8</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/919407233744?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Surange%20%26%20Company%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.8%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="even">
   <td class="num">25</td>
-  <td class="name">Advocate Jitendra Singh Rathore</td>
-  <td class="phone">070149 20940</td>
-  <td class="rating">⭐ 5.0</td>
-  <td><a href="https://wa.me/917014920940?text=Hi%2C%20is%20this%20Advocate%20Jitendra%20Singh%20Rathore%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205.0%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">Advocate Srajan Narang</td>
+  <td class="phone">091444 44403</td>
+  <td class="rating">⭐ 4.8</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/919144444403?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Srajan%20Narang%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.8%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="wait-row">
-  <td colspan="4">
+  <td colspan="6">
     <div class="wait-strip">⏱ Wait 10 minutes before continuing</div>
   </td>
 </tr>
 <tr class="odd">
   <td class="num">26</td>
-  <td class="name">Adv. Ghanshyam Singh Rajpurohit</td>
-  <td class="phone">094620 49461</td>
-  <td class="rating">⭐ 5.0</td>
-  <td><a href="https://wa.me/919462049461?text=Hi%2C%20is%20this%20Adv.%20Ghanshyam%20Singh%20Rajpurohit%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205.0%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">Advocate Ashish Singh Jadoun</td>
+  <td class="phone">097551 92525</td>
+  <td class="rating">⭐ 4.8</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/919755192525?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Ashish%20Singh%20Jadoun%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.8%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="even">
   <td class="num">27</td>
-  <td class="name">मोहनलाल सीरवी एडवोकेट</td>
-  <td class="phone">096104 72911</td>
-  <td class="rating">⭐ 5.0</td>
-  <td><a href="https://wa.me/919610472911?text=Hi%2C%20is%20this%20%E0%A4%AE%E0%A5%8B%E0%A4%B9%E0%A4%A8%E0%A4%B2%E0%A4%BE%E0%A4%B2%20%E0%A4%B8%E0%A5%80%E0%A4%B0%E0%A4%B5%E0%A5%80%20%E0%A4%8F%E0%A4%A1%E0%A4%B5%E0%A5%8B%E0%A4%95%E0%A5%87%E0%A4%9F%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205.0%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">Sarnaam Singh Tomar</td>
+  <td class="phone">094251 17061</td>
+  <td class="rating">⭐ 4.1</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/919425117061?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Sarnaam%20Singh%20Tomar%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.1%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="odd">
   <td class="num">28</td>
-  <td class="name">Advocate Praveen chouhan Pali</td>
-  <td class="phone">098286 95061</td>
-  <td class="rating">⭐ 5.0</td>
-  <td><a href="https://wa.me/919828695061?text=Hi%2C%20is%20this%20Advocate%20Praveen%20chouhan%20Pali%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205.0%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">District Consumer Disputes Redressal Forum Gwalior</td>
+  <td class="phone">0751 223 1510</td>
+  <td class="rating">⭐ 4</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/917512231510?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20District%20Consumer%20Disputes%20Redressal%20Forum%20Gwalior%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="even">
   <td class="num">29</td>
-  <td class="name">Criminal lawyer raj.High court jaipur and session court Sikar</td>
-  <td class="phone">099820 23558</td>
-  <td class="rating">⭐ 5.0</td>
-  <td><a href="https://wa.me/919982023558?text=Hi%2C%20is%20this%20Criminal%20lawyer%20raj.High%20court%20jaipur%20and%20session%20court%20Sikar%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205.0%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">Gahoi Law Associates</td>
+  <td class="phone">084350 03000</td>
+  <td class="rating">⭐ 4.9</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/918435003000?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Gahoi%20Law%20Associates%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
 <tr class="odd">
   <td class="num">30</td>
-  <td class="name">Madan Lal Sharma, Advocate</td>
-  <td class="phone">094130 10977</td>
-  <td class="rating">⭐ 5.0</td>
-  <td><a href="https://wa.me/919413010977?text=Hi%2C%20is%20this%20Madan%20Lal%20Sharma%2C%20Advocate%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205.0%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A//aadityabhatnagar.online/portfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+  <td class="name">Prashant Law Chamber</td>
+  <td class="phone">088898 87111</td>
+  <td class="rating">⭐ 4.8</td>
+  <td class="meta">law firm in sagar</td>
+  <td><a href="https://wa.me/918889887111?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Prashant%20Law%20Chamber%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.8%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="wait-row">
+  <td colspan="6">
+    <div class="wait-strip">⏱ Wait 10 minutes before continuing</div>
+  </td>
+</tr>
+<tr class="even">
+  <td class="num">31</td>
+  <td class="name">Vaibhav Mishra</td>
+  <td class="phone">082692 49101</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/918269249101?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Vaibhav%20Mishra%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">32</td>
+  <td class="name">KALPANA DOSHI STAMP PAPER &amp; SERVICE PROVIDER (E-STAMP)</td>
+  <td class="phone">094799 32006</td>
+  <td class="rating">⭐ 4.6</td>
+  <td class="meta">law firm in ujjain</td>
+  <td><a href="https://wa.me/919479932006?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20KALPANA%20DOSHI%20STAMP%20PAPER%20%26%20SERVICE%20PROVIDER%20%28E-STAMP%29%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.6%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">33</td>
+  <td class="name">Advocate Pradeep Kumar Sharma</td>
+  <td class="phone">094250 92474</td>
+  <td class="rating">⭐ 4.9</td>
+  <td class="meta">law firm in ujjain</td>
+  <td><a href="https://wa.me/919425092474?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Pradeep%20Kumar%20Sharma%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">34</td>
+  <td class="name">NIKET JAIN &amp; ASSOCIATES</td>
+  <td class="phone">083190 34879</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in sagar</td>
+  <td><a href="https://wa.me/918319034879?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20NIKET%20JAIN%20%26%20ASSOCIATES%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">35</td>
+  <td class="name">Legal Munshi Consulting &amp; Business Solution</td>
+  <td class="phone">075664 41515</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/917566441515?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Legal%20Munshi%20Consulting%20%26%20Business%20Solution%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="wait-row">
+  <td colspan="6">
+    <div class="wait-strip">⏱ Wait 10 minutes before continuing</div>
+  </td>
+</tr>
+<tr class="odd">
+  <td class="num">36</td>
+  <td class="name">TMS Law Associates</td>
+  <td class="phone">070420 89814</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/917042089814?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20TMS%20Law%20Associates%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">37</td>
+  <td class="name">CA Anjali Lodha &amp; Company</td>
+  <td class="phone">094794 35006</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in ujjain</td>
+  <td><a href="https://wa.me/919479435006?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20CA%20Anjali%20Lodha%20%26%20Company%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">38</td>
+  <td class="name">Advocate Siddarth Shrivastava</td>
+  <td class="phone">074155 98577</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/917415598577?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Siddarth%20Shrivastava%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">39</td>
+  <td class="name">Ashish Tiwari High Court advocate</td>
+  <td class="phone">098262 81657</td>
+  <td class="rating">⭐ 4.9</td>
+  <td class="meta">law firm in ujjain</td>
+  <td><a href="https://wa.me/919826281657?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Ashish%20Tiwari%20High%20Court%20advocate%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">40</td>
+  <td class="name">Advocate Prashant Sharma</td>
+  <td class="phone">094253 07724</td>
+  <td class="rating">⭐ 4.3</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/919425307724?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Prashant%20Sharma%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.3%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="wait-row">
+  <td colspan="6">
+    <div class="wait-strip">⏱ Wait 10 minutes before continuing</div>
+  </td>
+</tr>
+<tr class="even">
+  <td class="num">41</td>
+  <td class="name">NITIN SHARMA (ADVOCATE HIGH COURT) BAIL, CRIMINAL CASES,CHEQUE BOUNCE CASES EXPERT,FAMILY CASES EXPERT,CRIMINAL TRIAL,(WP)</td>
+  <td class="phone">099939 37180</td>
+  <td class="rating">⭐ 4.9</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/919993937180?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20NITIN%20SHARMA%20%28ADVOCATE%20HIGH%20COURT%29%20BAIL%2C%20CRIMINAL%20CASES%2CCHEQUE%20BOUNCE%20CASES%20EXPERT%2CFAMILY%20CASES%20EXPERT%2CCRIMINAL%20TRIAL%2C%28WP%29%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">42</td>
+  <td class="name">Utkarsh Agrawal Advocate and Associates - Civil Lawyer/DRT Lawyer/Criminal Lawyer/Best Advocate in Jabalpur</td>
+  <td class="phone">094246 40151</td>
+  <td class="rating">⭐ 4.8</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/919424640151?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Utkarsh%20Agrawal%20Advocate%20and%20Associates%20-%20Civil%20Lawyer%2FDRT%20Lawyer%2FCriminal%20Lawyer%2FBest%20Advocate%20in%20Jabalpur%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.8%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">43</td>
+  <td class="name">APEX LEGAL &amp; ASSOCIATES- Advocate Praveen Pandey</td>
+  <td class="phone">077729 28999</td>
+  <td class="rating">⭐ great</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/917772928999?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20APEX%20LEGAL%20%26%20ASSOCIATES-%20Advocate%20Praveen%20Pandey%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%20great%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">44</td>
+  <td class="name">Ram Pathak Advocate</td>
+  <td class="phone">094257 90577</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/919425790577?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Ram%20Pathak%20Advocate%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">45</td>
+  <td class="name">Praveen Agarwal</td>
+  <td class="phone">098270 64067</td>
+  <td class="rating">⭐ 3.7</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/919827064067?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Praveen%20Agarwal%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%203.7%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="wait-row">
+  <td colspan="6">
+    <div class="wait-strip">⏱ Wait 10 minutes before continuing</div>
+  </td>
+</tr>
+<tr class="odd">
+  <td class="num">46</td>
+  <td class="name">Advocate Yogesh Lakshkar</td>
+  <td class="phone">090746 60802</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/919074660802?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Yogesh%20Lakshkar%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">47</td>
+  <td class="name">Atul Kumar &amp; Associates CA</td>
+  <td class="phone">094251 10919</td>
+  <td class="rating">⭐ 4.8</td>
+  <td class="meta">law firm in gwalior</td>
+  <td><a href="https://wa.me/919425110919?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Atul%20Kumar%20%26%20Associates%20CA%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.8%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">48</td>
+  <td class="name">Emrum Legal</td>
+  <td class="phone">076106 78652</td>
+  <td class="rating">⭐ 4.7</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/917610678652?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Emrum%20Legal%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.7%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">49</td>
+  <td class="name">Advocate Rinkesh Mourya</td>
+  <td class="phone">094243 94650</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/919424394650?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Rinkesh%20Mourya%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">50</td>
+  <td class="name">✅ 𝗔𝗱𝘃𝗼𝗰𝗮𝘁𝗲 𝗧𝘂𝘀𝗶 𝗦𝗮𝗵𝗮 &amp; 𝗮𝘀𝘀𝗼𝗰𝗶𝗮𝘁𝗲𝘀 - DRT Advocate | DRT Lawyer | Debts Recovery Tribunal | Best Advocate in Jabalpur</td>
+  <td class="phone">094078 52588</td>
+  <td class="rating">⭐ 4.5</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/919407852588?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20%E2%9C%85%20%F0%9D%97%94%F0%9D%97%B1%F0%9D%98%83%F0%9D%97%BC%F0%9D%97%B0%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B2%20%F0%9D%97%A7%F0%9D%98%82%F0%9D%98%80%F0%9D%97%B6%20%F0%9D%97%A6%F0%9D%97%AE%F0%9D%97%B5%F0%9D%97%AE%20%26%20%F0%9D%97%AE%F0%9D%98%80%F0%9D%98%80%F0%9D%97%BC%F0%9D%97%B0%F0%9D%97%B6%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B2%F0%9D%98%80%20-%20DRT%20Advocate%20%7C%20DRT%20Lawyer%20%7C%20Debts%20Recovery%20Tribunal%20%7C%20Best%20Advocate%20in%20Jabalpur%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.5%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="wait-row">
+  <td colspan="6">
+    <div class="wait-strip">⏱ Wait 10 minutes before continuing</div>
+  </td>
+</tr>
+<tr class="even">
+  <td class="num">51</td>
+  <td class="name">Advocate Siddharth Shukla</td>
+  <td class="phone">079993 23167</td>
+  <td class="rating">⭐ 4.9</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/917999323167?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Siddharth%20Shukla%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">52</td>
+  <td class="name">Advocate Pankaj Sharma</td>
+  <td class="phone">098272 39150</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/919827239150?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Pankaj%20Sharma%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">53</td>
+  <td class="name">𝗔𝗱𝘃𝗼𝗰𝗮𝘁𝗲 𝗨𝗺𝗮 𝘆𝗮𝗱𝗮𝘃 - Best Advocate in High Court Jabalpur| DRT Advocate| Criminal Lawyer| Advocate in Jabalpur</td>
+  <td class="phone">093403 92838</td>
+  <td class="rating">⭐ 4.8</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/919340392838?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20%F0%9D%97%94%F0%9D%97%B1%F0%9D%98%83%F0%9D%97%BC%F0%9D%97%B0%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B2%20%F0%9D%97%A8%F0%9D%97%BA%F0%9D%97%AE%20%F0%9D%98%86%F0%9D%97%AE%F0%9D%97%B1%F0%9D%97%AE%F0%9D%98%83%20-%20Best%20Advocate%20in%20High%20Court%20Jabalpur%7C%20DRT%20Advocate%7C%20Criminal%20Lawyer%7C%20Advocate%20in%20Jabalpur%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.8%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">54</td>
+  <td class="name">Advocate Akash Singhai</td>
+  <td class="phone">081099 99044</td>
+  <td class="rating">⭐ 4.9</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/918109999044?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Akash%20Singhai%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">55</td>
+  <td class="name">Ruprah Legal Chambers</td>
+  <td class="phone">080850 86160</td>
+  <td class="rating">⭐ 4.7</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/918085086160?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Ruprah%20Legal%20Chambers%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.7%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="wait-row">
+  <td colspan="6">
+    <div class="wait-strip">⏱ Wait 10 minutes before continuing</div>
+  </td>
+</tr>
+<tr class="odd">
+  <td class="num">56</td>
+  <td class="name">Alok Tiwari 55 Office</td>
+  <td class="phone">077729 65555</td>
+  <td class="rating">⭐ 4.9</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/917772965555?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Alok%20Tiwari%2055%20Office%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">57</td>
+  <td class="name">Advocate Dr. Rashmi Pathak</td>
+  <td class="phone">070006 26501</td>
+  <td class="rating">⭐ 4.9</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/917000626501?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Dr.%20Rashmi%20Pathak%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">58</td>
+  <td class="name">Alok Tiwari 55 Office</td>
+  <td class="phone">077729 65555</td>
+  <td class="rating">⭐ 4.9</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/917772965555?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Alok%20Tiwari%2055%20Office%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">59</td>
+  <td class="name">Ruprah Legal Chambers</td>
+  <td class="phone">080850 86160</td>
+  <td class="rating">⭐ 4.7</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/918085086160?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Ruprah%20Legal%20Chambers%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.7%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">60</td>
+  <td class="name">Shrivastava &amp; Kesarwani Law Associates</td>
+  <td class="phone">096852 93124</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/919685293124?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Shrivastava%20%26%20Kesarwani%20Law%20Associates%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="wait-row">
+  <td colspan="6">
+    <div class="wait-strip">⏱ Wait 10 minutes before continuing</div>
+  </td>
+</tr>
+<tr class="even">
+  <td class="num">61</td>
+  <td class="name">Hyder Law Chambers</td>
+  <td class="phone">098261 56567</td>
+  <td class="rating">⭐ 4.5</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/919826156567?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Hyder%20Law%20Chambers%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.5%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">62</td>
+  <td class="name">Lawgical Startup</td>
+  <td class="phone">081096 89789</td>
+  <td class="rating">⭐ 4.7</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/918109689789?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Lawgical%20Startup%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.7%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">63</td>
+  <td class="name">Advocate Virat Shrivastava -Supreme Court/High Court/Services Matter/Tender Dispute/Bail Matter/Best Criminal Lawyer Jabalpur</td>
+  <td class="phone">098220 84880</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/919822084880?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Virat%20Shrivastava%20-Supreme%20Court%2FHigh%20Court%2FServices%20Matter%2FTender%20Dispute%2FBail%20Matter%2FBest%20Criminal%20Lawyer%20Jabalpur%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">64</td>
+  <td class="name">Debts Recovery Tribunal Jabalpur - DRT Madhya Pradesh - Chattiagarh, ADV. Ekansh Dhingra Best Advocate</td>
+  <td class="phone">088006 68765</td>
+  <td class="rating">⭐ 4.6</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/918800668765?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Debts%20Recovery%20Tribunal%20Jabalpur%20-%20DRT%20Madhya%20Pradesh%20-%20Chattiagarh%2C%20ADV.%20Ekansh%20Dhingra%20Best%20Advocate%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.6%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">65</td>
+  <td class="name">Advocate Palash Narad</td>
+  <td class="phone">077670 36742</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/917767036742?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Palash%20Narad%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="wait-row">
+  <td colspan="6">
+    <div class="wait-strip">⏱ Wait 10 minutes before continuing</div>
+  </td>
+</tr>
+<tr class="odd">
+  <td class="num">66</td>
+  <td class="name">Adv Bramhanand Pandey</td>
+  <td class="phone">099935 32226</td>
+  <td class="rating">⭐ 3.5</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/919993532226?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Adv%20Bramhanand%20Pandey%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%203.5%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">67</td>
+  <td class="name">𝗠𝗮𝗻𝗶𝘀𝗵 𝗗𝗮𝘁𝘁 𝗦𝗲𝗻𝗶𝗼𝗿 𝗔𝗱𝘃𝗼𝗰𝗮𝘁𝗲 -Criminal Lawyer |Lawyer for High Court |Senior Advocate in Jabalpur</td>
+  <td class="phone">0761 403 9000</td>
+  <td class="rating">⭐ 4.5</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/917614039000?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20%F0%9D%97%A0%F0%9D%97%AE%F0%9D%97%BB%F0%9D%97%B6%F0%9D%98%80%F0%9D%97%B5%20%F0%9D%97%97%F0%9D%97%AE%F0%9D%98%81%F0%9D%98%81%20%F0%9D%97%A6%F0%9D%97%B2%F0%9D%97%BB%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BF%20%F0%9D%97%94%F0%9D%97%B1%F0%9D%98%83%F0%9D%97%BC%F0%9D%97%B0%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B2%20-Criminal%20Lawyer%20%7CLawyer%20for%20High%20Court%20%7CSenior%20Advocate%20in%20Jabalpur%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.5%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">68</td>
+  <td class="name">Advocate Shailesh Satish Namdeo</td>
+  <td class="phone">070478 88666</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/917047888666?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Shailesh%20Satish%20Namdeo%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">69</td>
+  <td class="name">Advocate Ekansh Dhingra</td>
+  <td class="phone">088006 68765</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/918800668765?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Ekansh%20Dhingra%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">70</td>
+  <td class="name">Advocate Nikhil Bhatt | HIGH COURT | NCLT | RERA | DRT | CAT</td>
+  <td class="phone">089897 55788</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/918989755788?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Nikhil%20Bhatt%20%7C%20HIGH%20COURT%20%7C%20NCLT%20%7C%20RERA%20%7C%20DRT%20%7C%20CAT%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="wait-row">
+  <td colspan="6">
+    <div class="wait-strip">⏱ Wait 10 minutes before continuing</div>
+  </td>
+</tr>
+<tr class="even">
+  <td class="num">71</td>
+  <td class="name">Kataria&#x27;s Law House</td>
+  <td class="phone">089626 24004</td>
+  <td class="rating">⭐ 4.2</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/918962624004?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Kataria%27s%20Law%20House%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.2%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">72</td>
+  <td class="name">DLegal View Advocates &amp; Co.</td>
+  <td class="phone">075790 06367</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/917579006367?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20DLegal%20View%20Advocates%20%26%20Co.%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">73</td>
+  <td class="name">Tanveer Saluja &amp; Associates, Company Secretaries</td>
+  <td class="phone">070001 56796</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/917000156796?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Tanveer%20Saluja%20%26%20Associates%2C%20Company%20Secretaries%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">74</td>
+  <td class="name">Tanishka Ajmani Jaggi- Law Office</td>
+  <td class="phone">079875 97713</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in jabalpur</td>
+  <td><a href="https://wa.me/917987597713?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Tanishka%20Ajmani%20Jaggi-%20Law%20Office%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">75</td>
+  <td class="name">Advocate Arjun Singh Kurmi</td>
+  <td class="phone">078038 98212</td>
+  <td class="rating">⭐ 4.8</td>
+  <td class="meta">law firm in sagar</td>
+  <td><a href="https://wa.me/917803898212?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Arjun%20Singh%20Kurmi%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.8%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="wait-row">
+  <td colspan="6">
+    <div class="wait-strip">⏱ Wait 10 minutes before continuing</div>
+  </td>
+</tr>
+<tr class="odd">
+  <td class="num">76</td>
+  <td class="name">Vakeel Khoj</td>
+  <td class="phone">083498 08933</td>
+  <td class="rating">⭐ 3</td>
+  <td class="meta">law firm in sagar</td>
+  <td><a href="https://wa.me/918349808933?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Vakeel%20Khoj%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%203%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">77</td>
+  <td class="name">Legal Justice Chamber</td>
+  <td class="phone">079994 95397</td>
+  <td class="rating">⭐ 4.8</td>
+  <td class="meta">law firm in sagar</td>
+  <td><a href="https://wa.me/917999495397?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Legal%20Justice%20Chamber%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.8%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">78</td>
+  <td class="name">Gour Legal Associates</td>
+  <td class="phone">083498 08933</td>
+  <td class="rating">⭐ great</td>
+  <td class="meta">law firm in sagar</td>
+  <td><a href="https://wa.me/918349808933?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Gour%20Legal%20Associates%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%20great%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">79</td>
+  <td class="name">Sagar and Sagar Law Offices</td>
+  <td class="phone">011 4754 3981</td>
+  <td class="rating">⭐ 3.9</td>
+  <td class="meta">law firm in sagar</td>
+  <td><a href="https://wa.me/911147543981?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Sagar%20and%20Sagar%20Law%20Offices%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%203.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">80</td>
+  <td class="name">Office Sagar Chandra Associates</td>
+  <td class="phone">011 4610 7580</td>
+  <td class="rating">⭐ 3.7</td>
+  <td class="meta">law firm in sagar</td>
+  <td><a href="https://wa.me/911146107580?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Office%20Sagar%20Chandra%20Associates%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%203.7%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="wait-row">
+  <td colspan="6">
+    <div class="wait-strip">⏱ Wait 10 minutes before continuing</div>
+  </td>
+</tr>
+<tr class="even">
+  <td class="num">81</td>
+  <td class="name">Advocate Sagar Sharma &amp; Associates 🏆 Best Lawyer In Noida | Divorce Lawyer | Criminal Lawyer</td>
+  <td class="phone">099990 19695</td>
+  <td class="rating">⭐ 4.9</td>
+  <td class="meta">law firm in sagar</td>
+  <td><a href="https://wa.me/919999019695?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Sagar%20Sharma%20%26%20Associates%20%F0%9F%8F%86%20Best%20Lawyer%20In%20Noida%20%7C%20Divorce%20Lawyer%20%7C%20Criminal%20Lawyer%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">82</td>
+  <td class="name">Advocate Lakhan upadhyay</td>
+  <td class="phone">081205 84444</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in ujjain</td>
+  <td><a href="https://wa.me/918120584444?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20Lakhan%20upadhyay%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">83</td>
+  <td class="name">Breakeven Advisory LLP</td>
+  <td class="phone">091116 00090</td>
+  <td class="rating">⭐ 4.8</td>
+  <td class="meta">law firm in ujjain</td>
+  <td><a href="https://wa.me/919111600090?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Breakeven%20Advisory%20LLP%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.8%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">84</td>
+  <td class="name">CA. MSBR &amp; ASSOCIATES LLP (Rachwani &amp; Associates Chartered Accountants)</td>
+  <td class="phone">094248 01359</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in ujjain</td>
+  <td><a href="https://wa.me/919424801359?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20CA.%20MSBR%20%26%20ASSOCIATES%20LLP%20%28Rachwani%20%26%20Associates%20Chartered%20Accountants%29%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">85</td>
+  <td class="name">BL Gupta &amp; Company</td>
+  <td class="phone">099778 18877</td>
+  <td class="rating">⭐ 4.9</td>
+  <td class="meta">law firm in ujjain</td>
+  <td><a href="https://wa.me/919977818877?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20BL%20Gupta%20%26%20Company%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="wait-row">
+  <td colspan="6">
+    <div class="wait-strip">⏱ Wait 10 minutes before continuing</div>
+  </td>
+</tr>
+<tr class="odd">
+  <td class="num">86</td>
+  <td class="name">Benson &amp; Co.</td>
+  <td class="phone">091444 44434</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in ujjain</td>
+  <td><a href="https://wa.me/919144444434?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Benson%20%26%20Co.%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">87</td>
+  <td class="name">KATARIA GROUP</td>
+  <td class="phone">0734 401 0001</td>
+  <td class="rating">⭐ 4.9</td>
+  <td class="meta">law firm in ujjain</td>
+  <td><a href="https://wa.me/917344010001?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20KATARIA%20GROUP%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">88</td>
+  <td class="name">District Court</td>
+  <td class="phone">089650 40357</td>
+  <td class="rating">⭐ 4.2</td>
+  <td class="meta">law firm in ujjain</td>
+  <td><a href="https://wa.me/918965040357?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20District%20Court%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.2%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">89</td>
+  <td class="name">Harsh_light_and_sound</td>
+  <td class="phone">093020 46883</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in ujjain</td>
+  <td><a href="https://wa.me/919302046883?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Harsh_light_and_sound%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">90</td>
+  <td class="name">Pranay ozha and Associates</td>
+  <td class="phone">098272 17620</td>
+  <td class="rating">⭐ 4.8</td>
+  <td class="meta">law firm in ratlam</td>
+  <td><a href="https://wa.me/919827217620?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Pranay%20ozha%20and%20Associates%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.8%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="wait-row">
+  <td colspan="6">
+    <div class="wait-strip">⏱ Wait 10 minutes before continuing</div>
+  </td>
+</tr>
+<tr class="even">
+  <td class="num">91</td>
+  <td class="name">Shree Dwarikadhish Tax Consultancy</td>
+  <td class="phone">078988 60859</td>
+  <td class="rating">⭐ 4.9</td>
+  <td class="meta">law firm in ratlam</td>
+  <td><a href="https://wa.me/917898860859?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Shree%20Dwarikadhish%20Tax%20Consultancy%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">92</td>
+  <td class="name">Advocate anil saraswat</td>
+  <td class="phone">098931 66794</td>
+  <td class="rating">⭐ 5</td>
+  <td class="meta">law firm in ratlam</td>
+  <td><a href="https://wa.me/919893166794?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Advocate%20anil%20saraswat%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%205%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">93</td>
+  <td class="name">Drishya Welfare Society</td>
+  <td class="phone">088150 22604</td>
+  <td class="rating">⭐ 4.9</td>
+  <td class="meta">law firm in ratlam</td>
+  <td><a href="https://wa.me/918815022604?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Drishya%20Welfare%20Society%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.9%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="odd">
+  <td class="num">94</td>
+  <td class="name">Dafria and Co</td>
+  <td class="phone">099778 22290</td>
+  <td class="rating">⭐ 4</td>
+  <td class="meta">law firm in ratlam</td>
+  <td><a href="https://wa.me/919977822290?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20Dafria%20and%20Co%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
+</tr>
+<tr class="even">
+  <td class="num">95</td>
+  <td class="name">District Court Ratlam</td>
+  <td class="phone">07412 231 450</td>
+  <td class="rating">⭐ 4.2</td>
+  <td class="meta">law firm in ratlam</td>
+  <td><a href="https://wa.me/917412231450?text=%F0%9F%92%AC%20Hi%2C%20is%20this%20District%20Court%20Ratlam%3F%0A%0AI%20came%20across%20your%20firm%20and%20noticed%20you%20have%20a%204.2%20rating.%0A%0AWith%20that%20kind%20of%20reputation%2C%20a%20proper%20website%20could%20bring%20you%20even%20more%20high-quality%20clients.%0A%0AI%20help%20law%20firms%20increase%20client%20inquiries%20through%20simple%2C%20professional%20websites.%0A%0AHere%27s%20my%20portfolio%3A%0Ahttps%3A%2F%2Faadityabhatnagar.online%2Fportfolio%0A%0AIf%20you%27d%20like%2C%20I%20can%20create%20a%20quick%20demo%20for%20your%20firm%20%28free%29%2C%20and%20you%20can%20decide%20after%20seeing%20it." target="_blank" class="btn">WhatsApp</a></td>
 </tr>
     </tbody>
   </table>
